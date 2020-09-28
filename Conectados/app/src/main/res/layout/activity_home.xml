@@ -4,13 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".HomeActivity"
+    android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/activity_home_tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Bem-vindo, PlaceHolder Júnior da Silva Júnior!"
+        android:textColor="#000"
+        android:textSize="16dp"/>
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/images"/>
+        android:id="@+id/activity_home_iv_qrCode"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"/>
 
 
 </LinearLayout>
