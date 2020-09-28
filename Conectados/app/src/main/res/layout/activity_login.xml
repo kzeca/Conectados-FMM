@@ -58,7 +58,7 @@
             android:id="@+id/activity_login_tv_esqueceu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Esqueceu sua conta?"
+            android:text="Esqueceu sua senha?"
             android:textColor="#0022FF"
             android:textSize="18dp"
             android:layout_margin="20dp"/>
