@@ -53,8 +53,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT).show();
                     } else{
                         registerUser();
-                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                        startActivity(intent);
                     }
                 }
             }
@@ -76,6 +74,9 @@ public class RegisterActivity extends AppCompatActivity {
                             database.child("name").setValue(nome);
                             Toast.makeText(getApplicationContext(), "Seus dados foram salvos!",
                                     Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            finish();
                         }
                     }
                 });
