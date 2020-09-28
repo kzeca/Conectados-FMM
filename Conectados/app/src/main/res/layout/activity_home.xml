@@ -24,5 +24,15 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="80dp"/>
 
+    <Button
+        android:id="@+id/activity_home_bt_sair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Sair"
+        android:layout_marginTop="45dp"
+        android:textSize="24dp"
+        android:background="#3F51B5"
+        android:textColor="#fff"/>
 
 </LinearLayout>
