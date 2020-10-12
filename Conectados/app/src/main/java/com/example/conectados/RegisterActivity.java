@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +24,8 @@ import java.awt.font.TextAttribute;
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText txtEmail, txtSenha, txtConfirmar, txtNome;
-    private Button btnCriar, btnVoltar;
+    private Button btnCriar;
+    ImageButton btnVoltar;
     FirebaseAuth firebaseAuth;
     
     @Override

@@ -50,11 +50,11 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(txtEmail.getText().toString().isEmpty()
-                || txtSenha.getText().toString().isEmpty()){
+                if (txtEmail.getText().toString().isEmpty()
+                        || txtSenha.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Preencha todos os campos",
                             Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     userLogin();
                 }
             }
@@ -68,12 +68,12 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             firebaseUser = firebaseAuth.getCurrentUser();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);
                             finish();
-                        }else {
+                        } else {
                             Toast.makeText(LoginActivity.this, "Email e/ou senha incorretos",
                                     Toast.LENGTH_LONG).show();
                         }
@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
-    private void setThings(){
+    private void setThings() {
         txtEmail = findViewById(R.id.activity_login_et_email);
         txtSenha = findViewById(R.id.activity_login_et_password);
         btnCriar = findViewById(R.id.activity_login_tv_criar);

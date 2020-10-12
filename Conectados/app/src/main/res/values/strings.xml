@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Conectados</string>
+    <string name="esqueceu_a_senha"><u>Esqueceu a senha?</u></string>
+    <string name="senha">Senha</string>
+    <string name="email">Email</string>
+    <string name="cadastrar"><u>Cadastrar</u></string>
+    <string name="nome">Nome</string>
+    <string name="ra">RA</string>
+    <string name="confirmar_senha">Confirmar Senha</string>
 </resources>

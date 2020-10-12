@@ -11,39 +11,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Esqueceu sua senha"
-        android:textSize="36dp"
+        android:text="Recuperar senha"
+        android:textSize="32dp"
         android:layout_marginTop="40dp"
-        android:textStyle="bold"
-        android:textColor="#000"/>
+        android:textColor="@color/colorPrimaryDark"/>
 
     <EditText
         android:id="@+id/activity_forgot_et_email"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:hint="Insira o email para recuperação"
         android:layout_marginTop="60dp"
-        android:inputType="textEmailAddress"/>
+        android:layout_marginHorizontal="60dp"
+        android:background="@drawable/input_border"
+        android:hint="Insira o email para recuperação"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp" />
 
     <Button
         android:id="@+id/activity_forgot_bt_enviar"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Enviar email"
         android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="90dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bt_border"
+        android:text="Enviar email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#fff"
-        android:background="#8BC34A"/>
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/activity_forgot_bt_voltar"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Voltar"
         android:layout_gravity="center_horizontal"
-        android:textColor="#fff"
-        android:background="#3F51B5"/>
+        android:layout_marginHorizontal="90dp"
+        android:textSize="20sp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/bt_border"
+        android:backgroundTint="#3F51B5"
+        android:text="Voltar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#fff" />
 
 </LinearLayout>
