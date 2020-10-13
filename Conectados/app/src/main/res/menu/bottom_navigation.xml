@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_qr"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="QR Code"/>
+    <item
+        android:id="@+id/nav_notas"
+        android:icon="@drawable/ic_assessment_black_24dp"
+        android:title="Notas"/>
+    <item
+        android:id="@+id/nav_biblioteca"
+        android:icon="@drawable/ic_library_books_black_24dp"
+        android:title="Biblioteca"/>
+    <item
+        android:id="@+id/nav_info"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="Informações"/>
+
+</menu>

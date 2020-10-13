@@ -2,15 +2,18 @@ package com.example.conectados;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -35,45 +38,35 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        setObjects();
-        generateQRCode();
-        btnSair.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-                startActivity(intent);
-                FirebaseAuth.getInstance().signOut();
-                finish();
-            }
-        });
+        BottomNavigationView bottomNavigationView = findViewById(R.id.activity_home_nav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+        getSupportFragmentManager().beginTransaction().replace(R.id.constraintLayout,
+                new HomeFragment()).commit();
     }
 
-    private void generateQRCode() {
-        QRGEncoder qrgEncoder = new QRGEncoder(firebaseUser.getUid(), null,
-                QRGContents.Type.TEXT, 500);
-        Bitmap bitmap = qrgEncoder.getBitmap();
-        qrCode.setImageBitmap(bitmap);
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+                    switch (item.getItemId()){
+                        case R.id.nav_qr:
+                            selectedFragment = new HomeFragment();
 
-    }
-
-    private void setObjects() {
-        txtWelcome = findViewById(R.id.activity_home_tv_welcome);
-        btnSair = findViewById(R.id.activity_home_bt_sair);
-        qrCode = findViewById(R.id.activity_home_iv_qrCode);
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String nome = dataSnapshot.child("Alunos").child(firebaseUser.getUid())
-                        .child("name").getValue(String.class);
-                txtWelcome.setText("Bem-vindo, "+nome+"!");
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
+                            break;
+                        case R.id.nav_notas:
+                            selectedFragment = new NotasFragment();
+                            break;
+                        case R.id.nav_biblioteca:
+                            selectedFragment = new BibliotecaFragment();
+                            break;
+                        case R.id.nav_info:
+                            selectedFragment = new InfoFragment();
+                            break;
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.constraintLayout,
+                            selectedFragment).commit();
+                    return true;
+                }
+            };
 }
